@@ -1,8 +1,9 @@
 import React from 'react'
 import { useGlobalContext } from '../context'
 const Main = () => {
+    const { closeSubmenu } = useGlobalContext();
     return (
-        <section className='main'>
+        <section onMouseOver={closeSubmenu} className='main'>
             <div className="main-center">
                 <div className="main-info">
                     <h1>

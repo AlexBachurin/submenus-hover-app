@@ -3,8 +3,14 @@ import { FaBars } from 'react-icons/fa'
 import { useGlobalContext } from '../context';
 const Navbar = () => {
     const { sublinks, openSidebar, showSubmenu, closeSubmenu } = useGlobalContext();
+
+    const navHoverHandler = (e) => {
+        if (!e.target.classList.contains('link-btn')) {
+            closeSubmenu();
+        }
+    }
     return (
-        <nav className="nav">
+        <nav className="nav" onMouseOver={navHoverHandler} >
             <div className="nav-center">
                 <div className="nav-header">
                     <img src="https://res.cloudinary.com/dljezd6qv/image/upload/c_scale,h_40/v1619820552/main-logo.png" alt="logo" className="nav-logo" />
