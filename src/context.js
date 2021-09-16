@@ -9,6 +9,8 @@ export const AppProvider = ({ children }) => {
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
     //state for location of button
     const [location, setLocation] = useState({});
+    //state for text of hovered element
+    const [page, setPage] = useState('');
     // SIDEBAR
     const openSidebar = () => {
         setIsSidebarOpen(true);
@@ -23,12 +25,16 @@ export const AppProvider = ({ children }) => {
         //calculate location so submenu will be on center of our button and a bit on top of it, so it wont close
         const coords = { center: (btnCoords.left + btnCoords.right) / 2, top: btnCoords.bottom - 3 };
         //set location to state
+        //get text content of page which links we need to show
+        const text = e.target.textContent;
+        setPage(text);
         setLocation(coords);
         setIsSubmenuOpen(true)
     }
     const closeSubmenu = () => {
         setIsSubmenuOpen(false);
     }
+
 
 
 
@@ -45,7 +51,8 @@ export const AppProvider = ({ children }) => {
                 showSubmenu,
                 closeSidebar,
                 closeSubmenu,
-                location
+                location,
+                page
 
             }
         }>
