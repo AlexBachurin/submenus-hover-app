@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
+import sublinks from './data';
 
 const AppContext = React.createContext();
 
 export const AppProvider = ({ children }) => {
-
+    //get items from data, destructure it right away
     return <AppContext.Provider value=
         {
             {
+                sublinks
 
             }
         }>
