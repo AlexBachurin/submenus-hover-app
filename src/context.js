@@ -9,8 +9,8 @@ export const AppProvider = ({ children }) => {
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
     //state for location of button
     const [location, setLocation] = useState({});
-    //state for text of hovered element
-    const [page, setPage] = useState('');
+    //state for links for current hovered page
+    const [submenuItem, setSubmenuItem] = useState({ page: '', links: [] });
     // SIDEBAR
     const openSidebar = () => {
         setIsSidebarOpen(true);
@@ -27,7 +27,11 @@ export const AppProvider = ({ children }) => {
         //set location to state
         //get text content of page which links we need to show
         const text = e.target.textContent;
-        setPage(text);
+        //also watch change of page state and get sublinks based on this page state
+        const elem = sublinks.find((item) => {
+            return item.page === text;
+        })
+        setSubmenuItem(elem);
         setLocation(coords);
         setIsSubmenuOpen(true)
     }
@@ -52,7 +56,7 @@ export const AppProvider = ({ children }) => {
                 closeSidebar,
                 closeSubmenu,
                 location,
-                page
+                submenuItem
 
             }
         }>
