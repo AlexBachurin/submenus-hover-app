@@ -176,19 +176,19 @@ Stripe Styles
 .signin-btn {
   display: none;
 }
-.hero::before {
+.main::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 65%;
   top: 0;
   left: 0;
-  /* background: url(./images/hero.svg); */
+  background: url("https://res.cloudinary.com/dljezd6qv/image/upload/v1631773110/react-submenu/main_mff5cf.svg");
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
 }
-.hero {
+.main {
   position: relative;
   min-height: 100vh;
   margin-top: -5rem;
@@ -196,23 +196,23 @@ Stripe Styles
   grid-template-columns: 1fr;
   justify-items: center;
 }
-.hero-center {
+.main-center {
   width: 90vw;
   max-width: var(--max-width);
   display: grid;
   align-items: center;
 }
 
-.hero-info h1 {
+.main-info h1 {
   text-transform: none;
   max-width: 500px;
   margin-bottom: 2rem;
 }
-.hero-info p {
+.main-info p {
   max-width: 35em;
   line-height: 1.8;
 }
-.hero-images {
+.main-images {
   display: none;
 }
 
@@ -254,23 +254,23 @@ Stripe Styles
   }
 }
 
-/* hero media query */
+/* main media query */
 @media screen and (min-width: 800px) {
-  .hero::before {
+  .main::before {
     background-size: contain;
     height: 100%;
   }
-  .hero-center {
+  .main-center {
     grid-template-columns: 2fr 1fr;
   }
 
-  .hero-info h1 {
+  .main-info h1 {
     font-size: 3rem;
   }
-  .hero-info p {
+  .main-info p {
     font-size: 1.25rem;
   }
-  .hero-images {
+  .main-images {
     display: block;
     justify-self: center;
   }
@@ -280,16 +280,16 @@ Stripe Styles
 }
 
 @media screen and (min-width: 1200px) {
-  .hero-center {
+  .main-center {
     grid-template-columns: 2fr 1fr;
     align-items: end;
     padding-bottom: 12vh;
   }
-  .hero-info h1 {
+  .main-info h1 {
     max-width: 100%;
     font-size: 5.5rem;
   }
-  .hero-images {
+  .main-images {
     align-self: end;
   }
   .phone-img {
@@ -297,7 +297,7 @@ Stripe Styles
   }
 }
 @media screen and (min-width: 1400px) {
-  .hero-center {
+  .main-center {
     padding-bottom: 20vh;
   }
   .phone-img {
