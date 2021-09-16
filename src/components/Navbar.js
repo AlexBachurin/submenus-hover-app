@@ -7,7 +7,7 @@ const Navbar = () => {
         <nav className="nav">
             <div className="nav-center">
                 <div className="nav-header">
-                    <img src="https://res.cloudinary.com/dljezd6qv/image/upload/v1631668811/logo-horizontal_yiro1i.png" alt="logo" className="nav-logo" />
+                    <img src="https://res.cloudinary.com/dljezd6qv/image/upload/c_scale,h_40/v1619820552/main-logo.png" alt="logo" className="nav-logo" />
                     <button onClick={openSidebar} className="btn toggle-btn"><FaBars /></button>
                 </div>
                 <ul className="nav-links">

@@ -7,7 +7,8 @@ export const AppProvider = ({ children }) => {
     //state for sidebar and submenu
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
-
+    //state for location of button
+    const [location, setLocation] = useState({});
     // SIDEBAR
     const openSidebar = () => {
         setIsSidebarOpen(true);
@@ -16,7 +17,13 @@ export const AppProvider = ({ children }) => {
         setIsSidebarOpen(false);
     }
     //SUBMENU
-    const showSubmenu = () => {
+    const showSubmenu = (e) => {
+        //need to get target location as we hover on the button
+        const btnCoords = e.target.getBoundingClientRect();
+        //calculate location so submenu will be on center of our button and a bit on top of it, so it wont close
+        const coords = { center: (btnCoords.left + btnCoords.right) / 2, top: btnCoords.bottom - 3 };
+        //set location to state
+        setLocation(coords);
         setIsSubmenuOpen(true)
     }
     const closeSubmenu = () => {
@@ -37,7 +44,8 @@ export const AppProvider = ({ children }) => {
                 openSidebar,
                 showSubmenu,
                 closeSidebar,
-                closeSubmenu
+                closeSubmenu,
+                location
 
             }
         }>
