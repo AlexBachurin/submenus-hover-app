@@ -1,14 +1,43 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import sublinks from './data';
 
 const AppContext = React.createContext();
 
 export const AppProvider = ({ children }) => {
-    //get items from data, destructure it right away
+    //state for sidebar and submenu
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+
+    // SIDEBAR
+    const openSidebar = () => {
+        setIsSidebarOpen(true);
+    }
+    const closeSidebar = () => {
+        setIsSidebarOpen(false);
+    }
+    //SUBMENU
+    const showSubmenu = () => {
+        setIsSubmenuOpen(true)
+    }
+    const closeSubmenu = () => {
+        setIsSubmenuOpen(false);
+    }
+
+
+
+
+
+
     return <AppContext.Provider value=
         {
             {
-                sublinks
+                sublinks,
+                isSidebarOpen,
+                isSubmenuOpen,
+                openSidebar,
+                showSubmenu,
+                closeSidebar,
+                closeSubmenu
 
             }
         }>
