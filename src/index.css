@@ -252,6 +252,9 @@ Stripe Styles
     letter-spacing: 1px;
     width: 10rem;
   }
+  .link-btn:hover {
+    cursor: pointer;
+  }
 }
 
 /* main media query */
